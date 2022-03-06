@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public Image[] Lives;
+    public int livesRemaining;
     public int keys = 0;
     public float speed = 5.0f;
     
@@ -60,14 +62,17 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Princess")
         {
             youWin.text = "You Win!";
+            Time.timeScale = 0;
         }
         //to reset gamestate on collision with enemies
         if (collision.gameObject.tag == "Enemies")
-
-            //where the lives code will be
-        
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameControlScript.health -= 1;
+        }
+           
+
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         //to bounce off walls
         if (collision.gameObject.tag == "Walls")
