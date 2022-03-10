@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int livesRemaining;
     public int keys = 0;
     public float speed = 5.0f;
-    
+
 
     public Text keyAmount;
     public Text youWin;

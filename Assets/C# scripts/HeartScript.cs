@@ -6,7 +6,13 @@ public class HeartScript : MonoBehaviour
 {
     void OnTriggerEnter2D (Collider2D col)
     {
-        GameControlScript.health += 1;
-        Destroy(gameObject);
+        if(col.gameObject.tag == "Player")
+        {
+            GameControlScript.health += 1;
+            Destroy(gameObject);
+
+        }
+        
     }
+    
 }
