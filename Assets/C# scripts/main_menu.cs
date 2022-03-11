@@ -6,12 +6,22 @@ using UnityEngine.SceneManagement;
 public class main_menu : MonoBehaviour{
     public void PlayGame ()
     {
-        SceneManager. LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 
     public void QuitGame ()
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    public void backMenu ()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
+    public void openInstruct ()
+    {
+        SceneManager.LoadScene("Instructions", LoadSceneMode.Single);
     }
 }
